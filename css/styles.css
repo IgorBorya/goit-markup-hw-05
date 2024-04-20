@@ -495,7 +495,7 @@ p {
 
 .footer-form {
   display: flex;
-  gap: 8px;
+  gap: 24px;
   justify-content: space-between;
   align-items: center;
   margin-left: 80px;
@@ -505,6 +505,8 @@ p {
   margin-left: 80px;
   margin-bottom: 16px;
   font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
   letter-spacing: 0.02em;
   color: #fff;
 }
@@ -512,33 +514,44 @@ p {
 .footer-input {
   width: 264px;
   height: 40px;
-  border: 1px solid #fff;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  border: 1px solid #ffffff;
   border-radius: 4px;
   background-color: transparent;
   padding-left: 16px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
 .footer-input::placeholder {
   font-size: 12px;
   letter-spacing: 0.04em;
-  color: #fff;
+  color: #ffffff;
 }
 
 .footer-btn {
+  min-width: 165px;
   font: 16px;
   letter-spacing: 0.04em;
   text-align: center;
   color: #fff;
   border-radius: 4px;
   padding: 8px 24px;
-  width: 165px;
   height: 40px;
   background: #4d5ae5;
   border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  line-height: 1.5;
+  cursor: pointer;
 }
 
 .btn-icon {
   position: absolute;
+  margin-left: 16px;
 }
 
 .backdrop {
@@ -547,7 +560,7 @@ p {
   position: fixed;
   top: 0;
   background-color: rgba(46, 47, 66, 0.4);
-
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
@@ -568,12 +581,19 @@ p {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 24px;
+  padding: 72px 24px 24px 24px;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-open-btn {
   position: absolute;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px;
+  cursor: pointer;
   top: 24px;
   right: 24px;
   width: 24px;
@@ -581,16 +601,32 @@ p {
   background-color: #e7e9fc;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-open-btn:hover {
   background-color: #404bbf;
   fill: #fff;
+  border: none;
+}
+
+.modal-open-btn:focus {
+  background-color: #404bbf;
+  border: none;
 }
 
 .modal-open-btn:active {
   background-color: #404bbf;
   fill: #fff;
+}
+
+.svg-open {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.svg-open:focus {
+  fill: #ffffff;
 }
 
 .modal-title {
@@ -606,7 +642,11 @@ p {
 }
 
 .modal-field {
-  margin-bottom: 8px;
+  margin-bottom: 16px;
+}
+
+.five-div {
+  margin-bottom: 24px;
 }
 
 .modal-input-wrap {
@@ -639,14 +679,16 @@ p {
   letter-spacing: 0.04em;
   color: #8e8f99;
   margin-top: 8px;
+  line-height: 1.17;
 }
 
 .modal-field-icon {
   position: absolute;
-  left: 19px;
+  left: 16px;
   top: 50%;
   transform: translateY(-50%);
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-text {
@@ -655,11 +697,14 @@ p {
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
   background-color: transparent;
-  padding-left: 16px;
-  padding-top: 8px;
+  padding: 8px 16px;
   outline: transparent;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   resize: none;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: rgba(46, 47, 66, 0.4);
 }
 
 .modal-text:focus {
@@ -679,6 +724,7 @@ p {
   display: flex;
   align-items: center;
   gap: 8px;
+  line-height: 1.17;
 }
 
 .check-text-link {
@@ -686,6 +732,13 @@ p {
   text-decoration: underline;
   color: #4d5ae5;
   text-decoration-skip-ink: none;
+}
+
+.privacy-span {
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  border: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  fill: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
 }
 
 .check-text span {
@@ -702,19 +755,24 @@ p {
   background-color: #404bbf;
   border: 1px solid #404bbf;
   fill: #f4f4fd;
+  border: none;
 }
 
 .submit-btn {
   position: absolute;
+  min-width: 169px;
+  font-weight: 500;
+  line-height: 1.5;
+  cursor: pointer;
   left: 119px;
   right: 120px;
   font: 16px;
   letter-spacing: 0.04em;
   text-align: center;
   color: #fff;
-  width: 169px;
   height: 56px;
   background-color: #4d5ae5;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
   border: none;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
