@@ -548,8 +548,8 @@ p {
 }
 
 .btn-icon {
-  position: absolute;
   margin-left: 16px;
+  fill: #ffffff;
 }
 
 .backdrop {
@@ -638,7 +638,6 @@ p {
   color: #2e2f42;
   max-width: 360px;
   margin-bottom: 16px;
-  margin-top: 72px;
 }
 
 .modal-field {
@@ -704,6 +703,7 @@ p {
   padding: 8px 16px;
   outline: transparent;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: block;
   resize: none;
   font-size: 12px;
   line-height: 1.17;
@@ -777,5 +777,6 @@ p {
   background-color: #4d5ae5;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
   border: none;
+  border-radius: 4px;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
